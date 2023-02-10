@@ -25,7 +25,8 @@
 #include <string>
 #include <utility>
 
-DEFINE_uint32(http_body_limit_bytes, 1024,
+//TODO: ZEROK: This controls the character limit of the HTTP response. Make this limit configurable
+DEFINE_uint32(http_body_limit_bytes, 100*1024,
               "The amount of an HTTP body that will be returned on a parse");
 
 namespace px {

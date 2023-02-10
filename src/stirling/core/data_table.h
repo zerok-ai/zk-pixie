@@ -159,10 +159,10 @@ class DataTable : public NotCopyable {
 
       if constexpr (std::is_same_v<TDataType, types::StringValue>) {
         if (val.size() > max_string_bytes) {
-          val.resize(max_string_bytes);
-          val.append(kTruncatedMsg);
+          // val.resize(max_string_bytes);
+          // val.append(kTruncatedMsg);
         }
-        val.shrink_to_fit();
+        // val.shrink_to_fit();
       }
 
       tablet_.records[TIndex]->Append(std::move(val));
@@ -225,8 +225,8 @@ class DataTable : public NotCopyable {
     void Append(size_t col_index, TValueType val, size_t max_string_bytes = 1024) {
       if constexpr (std::is_same_v<TValueType, types::StringValue>) {
         if (val.size() > max_string_bytes) {
-          val.resize(max_string_bytes);
-          val.append(kTruncatedMsg);
+          // val.resize(max_string_bytes);
+          // val.append(kTruncatedMsg);
         }
       }
 
